@@ -68,7 +68,7 @@ def facebook_crawler():
 
     print("資料爬取完畢")
     posts_dataframe = pd.DataFrame(post_datas, columns=['粉絲專頁', '發文ID', '發文內容', '發文讚數', '發文類型', '發文時間', '回文'])
-    posts_dataframe.to_csv('D:/woodnata_note/data.csv', encoding='utf-8')
+    posts_dataframe.to_csv('D:/woodnata_note/{}_data.csv'.format(fan_page_name), encoding='utf-8')
 
     client = MongoClient("mongodb://127.0.0.1:27017")
     db = client[db_name]
